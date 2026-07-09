@@ -1,0 +1,508 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    h1, h2, h3{
+    letter-spacing: -0.02em;
+}
+}
+
+body {
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+
+    color: #2d2d2d;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: -20px;
+
+    background-image: url("assets/krajobraz.jpg");
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(248, 244, 237, 0,35);
+
+    z-index: -1;
+}
+
+.choice-header {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 18px 32px;
+
+    background: rgba(255, 253, 248, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(45, 35, 25, 0.08);
+
+    text-align: center;
+}
+
+.choice-header h2 {
+    margin: 0 0 6px;
+    color: #2f352f;
+}
+
+.choice-header p {
+    margin: 0;
+    color: #5f665f;
+}
+
+
+/* EKRANY */
+
+.screen{
+
+    width:100%;
+
+    max-width:1000px;
+}
+
+.hidden{
+
+    display:none;
+}
+
+
+/* KARTY */
+
+.card {
+    background: rgba(255, 253, 248, 0.78);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+    padding: 42px 55px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 12px 35px rgba(65, 50, 35, 0.10);
+
+    text-align: center;
+}
+
+.card h1,
+.card h2{
+
+    margin-bottom:20px;
+}
+
+.card p {
+    margin: 18px 0;
+
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+
+/* PRZYCISKI */
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:14px;
+
+    transition:.2s;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+}
+
+#startBtn,
+#confirmBtn{
+
+    margin-top:30px;
+
+    padding:15px 28px;
+
+    background:#4f7f6b;
+
+    color:white;
+
+    font-size:1rem;
+    
+    align-self:center;
+    
+}
+
+
+/* WYBÓR */
+
+#choice-screen{
+
+    text-align:center;
+}
+
+.subtitle{
+
+    margin-top:12px;
+
+    margin-bottom:40px;
+
+    color:#666;
+}
+
+.animal-label {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+
+    font-size: 4rem;
+    line-height: 1;
+
+    top: 42px;
+}
+
+.beaver {
+    font-size: 1.6rem;
+    margin-left: 4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+
+/* KONTENER KOPERT */
+
+.envelope-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    flex-wrap: wrap;
+    margin-top: 150px;
+}
+
+
+/* KOPERTA */
+
+.envelope {
+    position: relative;
+
+    width: 230px;
+    height: 155px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-7px);
+
+    filter: drop-shadow(
+        0 14px 14px rgba(45, 35, 25, 0.15)
+    );
+}
+
+
+/* TYŁ KOPERTY */
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #e9dcc3;
+    border-radius: 0 0 12px 12px;
+    z-index: 1;
+}
+
+
+/* ETYKIETA / TYTUŁ */
+
+.envelope-label {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    top: 54px;
+
+    padding: 10px 8px;
+
+    background: #fffdf9;
+
+    border-radius: 8px;
+
+    color: #2d2d2d;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.35;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+
+    z-index: 2;
+
+    transition:
+        transform 0.55s ease,
+        top 0.55s ease;
+}
+
+
+/* PRZÓD KOPERTY */
+
+.envelope-front {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            transparent 49%,
+            #f1e5ce 50%
+        ),
+        linear-gradient(
+            215deg,
+            transparent 49%,
+            #eadcc2 50%
+        );
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* KLAPKA */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 95px;
+
+    background: #e4d3b5;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin: top center;
+
+    transition:
+        transform 0.55s ease,
+        z-index 0s linear 0.28s;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* OTWARTA KOPERTA */
+
+.envelope.active {
+    transform: translateY(-7px);
+}
+
+.envelope.active .envelope-flap {
+    transform: rotateX(180deg);
+
+    z-index: 1;
+}
+
+.envelope-label.animal-label {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+
+    font-size: 4rem !important;
+    line-height: 1;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+.envelope.active .envelope-label.animal-label {
+    top: 0;
+    transform: translate(-50%, -85%);
+    z-index: 10;
+}
+
+/* FOCUS DLA KLAWIATURY */
+
+.envelope:focus-visible {
+    outline: 3px solid #4f7f6b;
+    outline-offset: 7px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .envelope-container {
+        gap: 28px;
+    }
+
+    .envelope {
+        width: min(230px, 85vw);
+    }
+}
+
+
+/* PANEL OPISU */
+
+.details {
+    display: none;
+
+    margin: 40px auto 0;
+    padding: 35px;
+
+    background: rgba(255, 253, 248, 0.82);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(45, 35, 25, 0.10);
+
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.details.show {
+    display: flex;
+}
+.details h3{
+
+    margin-bottom:18px;
+}
+
+.details p{
+
+    line-height:1.8;
+}
+
+
+
+
+/* MOBILE */
+
+@media (max-width:700px){
+
+    body{
+
+        padding:20px;
+    }
+
+    .card{
+
+        padding:30px;
+    }
+
+    .envelope{
+
+        width:100%;
+    }
+
+}
+
+
+
+.easter-egg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.easter-egg.hidden {
+    display: none;
+}
+
+
+.easter-card {
+    width: min(420px, 90vw);
+    padding: 34px;
+    border-radius: 22px;
+    background: rgba(255, 253, 248, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    position: relative;
+}
+
+.egg-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: transparent;
+    color: #333;
+    font-size: 1.6rem;
+    padding: 0;
+}
+

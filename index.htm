@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: Dobrze Bobrze 🦫</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <!--
+    Hej.
+
+    Skoro tu jesteś, to znaczy, że oczywiście musiałeś zajrzeć do kodu XD
+
+    Uprzejmie informuję, że:
+    1. tak, wiem, że dałoby się to zrobić lepiej,
+    2. nie, nie przyjmuję code review,
+    3. projekt przeszedł rygorystyczne testy QA:
+        klikałam wszystko po kilka razy XD
+
+    -->
+
+    <!-- EKRAN POWITALNY -->
+
+    <section id="welcome-screen" class="screen active">
+
+        <div class="card">
+
+            <h1>Hej ❤️</h1>
+
+            <p>
+                Wiem, że ostatnie tygodnie nie są najłatwiejsze. <br>
+                Nie potrafię sprawić, żeby rekruterzy nagle odpisali.
+
+            </p>
+
+            <p>
+                Ale mogę sprawić, żebyśmy mieli jeden naprawdę fajny dzień. <br>
+                Dlatego przygotowałam trzy koperty.
+            </p>
+
+            <p>
+                Wybierz jedną.
+                Resztą zajmę się ja. 😊.
+            </p>
+
+            <button id="startBtn">
+                OK, sprawdźmy to
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- WYBÓR KOPERT -->
+
+    <section id="choice-screen" class="screen hidden">
+
+        <div class="choice-header">
+            <h2>Wybierz jedną kopertę ❤️</h2>
+
+            <p class="subtitle">
+            Obiecuję, że w każdej jest coś fajnego.
+            </p>
+        </div>
+
+        
+
+<div class="envelope-container">
+
+        <button class="envelope" data-plan="city">
+            <span class="envelope-back"></span>
+
+            <span class="envelope-label animal-label">
+                🦆
+            </span>
+
+            <span class="envelope-front"></span>
+
+            <span class="envelope-flap"></span>
+        </button>
+
+
+        <button class="envelope" data-plan="lake">
+            <span class="envelope-back"></span>
+
+            <span class="envelope-label animal-label">
+                🦦
+            </span>
+
+            <span class="envelope-front"></span>
+
+            <span class="envelope-flap"></span>
+        </button>
+
+
+        <button class="envelope" data-plan="trip">
+            <span class="envelope-back"></span>
+
+            <span class="envelope-label animal-label">
+                🐼
+            </span>
+
+            <span class="envelope-front"></span>
+
+            <span class="envelope-flap"></span>
+        </button>
+
+    </div>
+
+        <div id="details" class="details hidden">
+
+            <h3 id="details-title"></h3>
+
+            <p id="details-description"></p>
+
+            <button id="confirmBtn">
+                Dobrze bobrze, brzmi spoko <span class="beaver">🦫</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- EKRAN KOŃCOWY -->
+
+    <section id="end-screen" class="screen hidden">
+
+        <div class="card">
+
+            <h2>❤️ Super!</h2>
+
+            <p>
+                W takim razie... Postanowione 😊
+            </p>
+
+            <p>
+                Nie moge się doczekać!
+            </p>
+
+            <p>
+                A przygotowaniami zajmę się ja. ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+    <div id="easterEgg" class="easter-egg hidden">
+    <div class="easter-card">
+        <button id="closeEgg" class="egg-close">×</button>
+        <h2>Achievement unlocked 🦫</h2>
+        <p>Duck approved. 🦆</p>
+        <p>Otter approved. 🦦</p>
+        <p>Red panda approved. 🐼</p>
+        <p>Beaver extremely pleased. ❤️</p>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
